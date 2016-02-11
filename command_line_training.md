@@ -1,8 +1,10 @@
-# Understanding The Command Line
+# Understanding The Unix Command Line
 
-You've been using the command line for a while, but maybe just at a basic level - `cd`, `ls`, etc.
-It's taken me years to understand what I'm really doing when I type those commands (and I still have much to learn).
-Let me fill in some of the gaps for you and show you some of the powerful things you can do when you fire up your terminal.
+I've been using the Unix command line since about 2008.
+When I started, I learned `ls`, `cd`, and a few basics like that.
+But even after becoming more proficient, it was a while before I understood what I'm really doing when I type those commands (and I still have much to learn).
+
+If you're like I was - not a complete newbie, but pretty shallow in your command-line fu - let me fill in some of the gaps for you and show you some of the powerful things you can do when you fire up your terminal.
 But before that...
 
 ## What's a Terminal?
@@ -294,7 +296,8 @@ So this:
 
     rspec spec && say "success" || say "failure"
 
-...tells audibly you whether your tests passed (on a Mac, which has the `say` command). (This works because `rspec` correctly sets its exit status.)
+...tells audibly you whether your tests passed (on a Mac, which has the `say` command - try `espeak` on Linux).
+This works because `rspec` correctly sets its exit status based on whether the tests all passed.
 
 You can also check the last exit status in a subsequent command; it's available as `$?`.
 
@@ -308,20 +311,21 @@ Bash/zsh are full programming languages, so you can do looping, conditionals, et
    done`
 - `for i in $(seq 10); do echo "I'm counting to 10 like: $i"; done`
 
-You can look up more if you want. :)
+I don't tend to use conditionals and loops much in the shell; I tend to turn to Ruby for things like that.
+But you can [read lots more on this if you're interested](http://www.linux.org/threads/bash-decision-constructs.4123/).
 
 ## Using the command line from Vim
 
 One of my favorite Vim tricks is to highlight some lines, then call out to the shell to transform them.
 For example, to sort some lines in Vim, highlight and `!sort`.
 
-See [my blog post](http://nathanmlong.com/2013/01/making-vim,-unix-and-ruby-sing-harmony/) for more details.
+See ["Making Vim, Unix and Ruby sing harmony"](http://nathanmlong.com/2013/01/making-vim,-unix-and-ruby-sing-harmony/) for more details.
+
+(You can probably do this sort of thing in emacs, but I don't know it, so you emacs users will have to do your own research here.)
 
 ## Reading man pages
 
-    "Unix will give you enough rope to shoot yourself in the foot. If you didn't think rope would do that, you should have read the man page."
-     - https://twitter.com/mhoye/status/694646265657708544
-
+    "Unix will give you enough rope to shoot yourself in the foot. If you didn't think rope would do that, you should have read the man page." -  https://twitter.com/mhoye/status/694646265657708544
 `man` is a command to show the "manual page" for a program, if it has one.
 These are great for reference if you know how to read them. Here's the start of `man ls` on OS X:
 
@@ -347,14 +351,15 @@ See `gem install tldrb` for an example-oriented help utility.
 
 ## History
 
-`control + r` searches your history of commands to re-execute one.
+You may know that `control + r` searches your history of commands to re-execute one.
+
 `history` lets you see your history directly - eg `history | tail -5` for the most recent 5 commands.
 From the numbered entries you see there, `!1234` would re-run that number.
 You can configure how items of history your shell remembers.
 
-## Not covered
+## Wrapup
 
-- Users, "superusers", sudo, su, and file permissions
-- symlinks
-- named pipes
-- ...
+The command line is super powerful and sometimes even fun.
+I hope this has helped you get a better perspective on it, and inspired you to learn more.
+Thanks to the nice folks at [TMA](http://www.tma1.com/) for letting me develop this training for their development team.
+Particularly, thanks to [Mark Cooke](http://www.linkedin.com/in/MarkCCooke), [Adam Hunter](http://github.com/adamhunter) and [Rod Turnham](https://github.com/RodneyTurnham) for their support, and to [Simone](https://github.com/simonetma) and [Kim](https://github.com/KbellTMA) for being enthusiastic listeners.
