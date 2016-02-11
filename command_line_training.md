@@ -345,6 +345,13 @@ As is typical, `man ls` explains in detail what every possible flag will do, but
 
 See `gem install tldrb` for an example-oriented help utility.
 
+## History
+
+`control + r` searches your history of commands to re-execute one.
+`history` lets you see your history directly - eg `history | tail -5` for the most recent 5 commands.
+From the numbered entries you see there, `!1234` would re-run that number.
+You can configure how items of history your shell remembers.
+
 ## Not covered
 
 - Users, "superusers", sudo, su, and file permissions
